@@ -1,0 +1,19 @@
+<form novalidate [formGroup]="formularioDireccion" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+        <mat-label>Nombre director</mat-label>
+        <input matInput placeholder="Ejemplo: George" formControlName="directorNombre">
+    </mat-form-field>
+    <p class="error"
+        *ngIf="formularioDireccion.controls.directorNombre.errors?.required&&formularioDireccion.controls.directorNombre.touched">
+        El campo Nombre del director es necesario
+    </p>
+    <mat-form-field>
+        <mat-label>Apellido director</mat-label>
+        <input matInput placeholder="Ejemplo: Lucas" formControlName="directorApellido">
+    </mat-form-field>
+    <p class="error"
+        *ngIf="formularioDireccion.controls.directorApellido.errors?.required&&formularioDireccion.controls.directorApellido.touched">
+        El campo Apellido del director es necesario
+    </p>
+    <input type="submit" value="Confirmar">
+</form>

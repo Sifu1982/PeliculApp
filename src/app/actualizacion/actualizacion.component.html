@@ -1,6 +1,6 @@
 <button [routerLink]="['/lista']">Lista de películas</button>
 <div class="formulario">
-    <h2>Añade una película</h2>
+    <h2>Actualiza la película</h2>
     <form novalidate [formGroup]="formulario" (ngSubmit)="onSubmit()">
         <mat-form-field>
             <mat-label>Título</mat-label>
@@ -25,12 +25,22 @@
             *ngIf="formulario.controls.recaudacion.errors?.required&&formulario.controls.recaudacion.touched">
             El campo Recaudación es necesario
         </p>
+        <p>Dirección:</p>
         <mat-form-field>
-            <mat-label>Dirección</mat-label>
-            <input matInput placeholder="Ejemplo: 01/01/2021" formControlName="direccion">
+            <mat-label>Nombre del director</mat-label>
+            <input matInput placeholder="Nombre de ejemplo: George" formControlName="nombreDirector">
         </mat-form-field>
-        <p class="error" *ngIf="formulario.controls.direccion.errors?.required&&formulario.controls.direccion.touched">
-            El campo Dirección es necesario
+        <p class="error"
+            *ngIf="formulario.controls.nombreDirector.errors?.required&&formulario.controls.nombreDirector.touched">
+            El campo Nombre del director es necesario
+        </p>
+        <mat-form-field>
+            <mat-label>Apellido del director</mat-label>
+            <input matInput placeholder="Apellido de ejemplo: Lucas" formControlName="apellidoDirector">
+        </mat-form-field>
+        <p class="error"
+            *ngIf="formulario.controls.apellidoDirector.errors?.required&&formulario.controls.apellidoDirector.touched">
+            El campo Apellido del director es necesario
         </p>
         <mat-form-field>
             <mat-label>Género</mat-label>
@@ -47,15 +57,23 @@
             *ngIf="formulario.controls.productora.errors?.required&&formulario.controls.productora.touched">
             El campo Productora es necesario
         </p>
+        <p>Reparto principal:</p>
         <mat-form-field>
-            <mat-label>Cast principal</mat-label>
-            <input matInput placeholder="Ejemplo: 01/01/2021" formControlName="castPrincipal">
+            <mat-label>Nombre actor/actriz principal</mat-label>
+            <input matInput placeholder="Ejemplo: George" formControlName="nombreActor1">
         </mat-form-field>
         <p class="error"
-            *ngIf="formulario.controls.castPrincipal.errors?.required&&formulario.controls.castPrincipal.touched">
-            El campo Cast Principal es necesario
+            *ngIf="formulario.controls.nombreActor1.errors?.required&&formulario.controls.nombreActor1.touched">
+            El campo Nombre actor/actriz 1 es necesario
         </p>
-        <input type="submit" value="Actualizar">
+        <mat-form-field>
+            <mat-label>Apellido actor/actriz principal</mat-label>
+            <input matInput placeholder="Ejemplo: Clooney" formControlName="apellidoActor1">
+        </mat-form-field>
+        <p class="error"
+            *ngIf="formulario.controls.apellidoActor1.errors?.required&&formulario.controls.apellidoActor1.touched">
+            El campo Apellido actor/actriz 1 es necesario
+        </p> <input type="submit" value="Actualizar">
         <!-- <input type="submit" value="Enviar" [disabled]="formulario.invalid"> -->
     </form>
 </div>

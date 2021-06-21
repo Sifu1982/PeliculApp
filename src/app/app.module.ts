@@ -11,13 +11,17 @@ import { ListaPeliculasComponent } from './lista-peliculas/lista-peliculas.compo
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ActualizacionComponent } from './actualizacion/actualizacion.component';
+import { ActualizacionDireccionComponent } from './actualizacion-direccion/actualizacion-direccion.component';
+import { FormularioDireccionComponent } from './formulario-direccion/formulario-direccion.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormularioComponent,
     ListaPeliculasComponent,
-    ActualizacionComponent
+    ActualizacionComponent,
+    ActualizacionDireccionComponent,
+    FormularioDireccionComponent
   ],
   imports: [
     BrowserModule,

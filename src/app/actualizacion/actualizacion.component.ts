@@ -28,12 +28,19 @@ export class ActualizacionComponent implements OnInit {
         Validators.required
       ]),
       fechaDeEstreno: new FormControl('', [
-        Validators.required
+        Validators.required,
+        // Expresión regular para fecha dd/mm/aaaa
+        Validators.pattern(/^(0[1-9]|[12][0-9]|3[01])[/ /.](0[1-9]|1[012])[/ /.](19|20)\d\d$/)
       ]),
       recaudacion: new FormControl('', [
+        Validators.required,
+        // Expresión regular para número natural
+        Validators.pattern(/^[0-9]*$/)
+      ]),
+      nombreDirector: new FormControl('', [
         Validators.required
       ]),
-      direccion: new FormControl('', [
+      apellidoDirector: new FormControl('', [
         Validators.required
       ]),
       genero: new FormControl('', [
@@ -42,7 +49,10 @@ export class ActualizacionComponent implements OnInit {
       productora: new FormControl('', [
         Validators.required
       ]),
-      castPrincipal: new FormControl('', [
+      nombreActor1: new FormControl('', [
+        Validators.required
+      ]),
+      apellidoActor1: new FormControl('', [
         Validators.required
       ])
     });
