@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ActualizacionComponent } from './actualizacion/actualizacion.component';
-import { FormularioDireccionComponent } from './formulario-direccion/formulario-direccion.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { ListaPeliculasComponent } from './lista-peliculas/lista-peliculas.component';
 
