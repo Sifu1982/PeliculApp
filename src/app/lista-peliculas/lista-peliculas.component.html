@@ -1,0 +1,23 @@
+<div class="lista">
+    <h2>Mi lista de películas</h2>
+
+    <button [routerLink]="['/formulario']">Añadir película</button>
+
+    <div class="peliculas">
+        <div class="pelicula" *ngFor="let pelicula of arrayPeliculas; let indice=index">
+            <p>Título {{indice+1}}: {{pelicula.titulo}}</p>
+            <p>Fecha de estreno: {{pelicula.fechaDeEstreno|date:'dd/MM/y'}}</p>
+            <p>Recaudación: {{pelicula.recaudacion}} €</p>
+            <p>Dirección: {{pelicula.direccion.nombre}} {{pelicula.direccion.primerApellido}}</p>
+            <p>Género: {{pelicula.genero}}</p>
+            <p>Productora: {{pelicula.productora}}</p>
+            <div class="castPrincipal">
+                <h3>Cast principal:</h3>
+                <p *ngFor="let actor of pelicula.castPrincipal">{{actor.nombre}} {{actor.primerApellido}}</p>
+            </div>
+            <div class="botonera">
+                <button [routerLink]="['/actualizacion',indice]">Editar</button>
+                <button (click)="eliminarPelicula(indice)">Eliminar</button>
+            </div>
+        </div>
+    </div>

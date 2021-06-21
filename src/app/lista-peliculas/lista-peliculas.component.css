@@ -1,0 +1,110 @@
+.lista {
+    width: 80%;
+    margin: 3% auto;
+}
+
+h2 {
+    padding: 1%;
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Freckle Face', cursive;
+    font-weight: bolder;
+}
+
+button {
+    width: 29%;
+    display: block;
+    padding: 1%;
+    margin: 3% auto;
+    font-size: medium;
+    font-weight: bolder;
+    background-color: lightgreen;
+    color: white;
+    box-shadow: 5px 5px 5px greenyellow;
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(77, 236, 77);
+}
+
+.peliculas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pelicula {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 29.1%;
+    padding: 1%;
+    margin: 1%;
+}
+
+.pelicula p {
+    padding: 1%;
+}
+
+.pelicula p:first-child {
+    border-radius: 5px;
+    background-color: lightgreen;
+    padding: 5%;
+    margin-bottom: 5%;
+}
+
+.pelicula p:nth-child(2):hover, p:nth-child(3):hover, p:nth-child(4):hover, p:nth-child(5):hover, p:nth-child(6):hover, .castPrincipal:hover {
+    border-radius: 5px;
+    padding: 1%;
+    background-color: lightgrey;
+    color: white;
+    font-size: large;
+    text-align: center;
+}
+
+.castPrincipal {
+    padding: 1%;
+}
+
+.castPrincipal:hover {
+    background-color: white;
+    color: black;
+}
+
+.castPrincipal p {
+    margin-left: 10%;
+}
+
+.botonera {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.botonera button {
+    width: 40%;
+}
+
+.botonera button:last-child {
+    background-color: tomato;
+    box-shadow: 5px 5px 5px lightcoral;
+}
+
+.botonera button:last-child:hover {
+    background-color: rgb(252, 45, 8);
+}
+
+/* Media queries */
+
+@media(max-width: 1004px) {
+    .pelicula {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid black;
+        border-radius: 5px;
+        width: 100%;
+        padding: 1%;
+        margin: 1%;
+    }
+}

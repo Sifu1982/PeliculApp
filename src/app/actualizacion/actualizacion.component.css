@@ -1,0 +1,75 @@
+button {
+    width: 10%;
+    position: absolute;
+    left: 20%;
+    padding: .5%;
+    background-color: lightgray;
+    color: white;
+    box-shadow: 5px 5px 5px rgb(209, 190, 190);
+    border-radius: 5px;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(197, 186, 186);
+}
+
+.formulario {
+    width: 60%;
+    margin: 3% auto;
+}
+
+h2 {
+    padding-top: 5%;
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Freckle Face', cursive;
+    font-weight: bolder;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+input[type="submit"] {
+    width: 30%;
+    display: block;
+    padding: 2%;
+    margin: 3% auto 0;
+    font-size: medium;
+    font-weight: bolder;
+    background-color: lightgreen;
+    color: white;
+    box-shadow: 5px 5px 5px greenyellow;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: rgb(77, 236, 77);
+}
+
+/* Validaciones */
+
+input.ng-valid.ng-touched {
+    color: lightgreen;
+}
+
+input.ng-invalid.ng-touched {
+    color: tomato;
+}
+
+.error {
+    color: tomato;
+}
+
+/* Media queries */
+
+@media(max-width: 1004px) {
+    button {
+        width: 20%;
+        position: absolute;
+        left: 3%;
+        top: 5%;
+    }
+}

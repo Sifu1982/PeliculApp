@@ -1,0 +1,61 @@
+<button [routerLink]="['/lista']">Lista de películas</button>
+<div class="formulario">
+    <h2>Añade una película</h2>
+    <form novalidate [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <mat-form-field>
+            <mat-label>Título</mat-label>
+            <input matInput placeholder="Ejemplo: La Amenaza Fantasma" formControlName="titulo">
+        </mat-form-field>
+        <p class="error" *ngIf="formulario.controls.titulo.errors?.required&&formulario.controls.titulo.touched">
+            El campo Título es necesario
+        </p>
+        <mat-form-field>
+            <mat-label>Fecha de estreno</mat-label>
+            <input matInput placeholder="Ejemplo: 01/01/2021" formControlName="fechaDeEstreno">
+        </mat-form-field>
+        <p class="error"
+            *ngIf="formulario.controls.fechaDeEstreno.errors?.required&&formulario.controls.fechaDeEstreno.touched">
+            El campo Fecha de estreno es necesario
+        </p>
+        <mat-form-field>
+            <mat-label>Recaudación</mat-label>
+            <input matInput placeholder="Ejemplo: La Amenaza Fantasma" formControlName="recaudacion">
+        </mat-form-field>
+        <p class="error"
+            *ngIf="formulario.controls.recaudacion.errors?.required&&formulario.controls.recaudacion.touched">
+            El campo Recaudación es necesario
+        </p>
+        <mat-form-field>
+            <mat-label>Dirección</mat-label>
+            <input matInput placeholder="Ejemplo: 01/01/2021" formControlName="direccion">
+        </mat-form-field>
+        <p class="error" *ngIf="formulario.controls.direccion.errors?.required&&formulario.controls.direccion.touched">
+            El campo Dirección es necesario
+        </p>
+        <mat-form-field>
+            <mat-label>Género</mat-label>
+            <input matInput placeholder="Ejemplo: La Amenaza Fantasma" formControlName="genero">
+        </mat-form-field>
+        <p class="error" *ngIf="formulario.controls.genero.errors?.required&&formulario.controls.genero.touched">
+            El campo Género es necesario
+        </p>
+        <mat-form-field>
+            <mat-label>Productora</mat-label>
+            <input matInput placeholder="Ejemplo: 01/01/2021" formControlName="productora">
+        </mat-form-field>
+        <p class="error"
+            *ngIf="formulario.controls.productora.errors?.required&&formulario.controls.productora.touched">
+            El campo Productora es necesario
+        </p>
+        <mat-form-field>
+            <mat-label>Cast principal</mat-label>
+            <input matInput placeholder="Ejemplo: 01/01/2021" formControlName="castPrincipal">
+        </mat-form-field>
+        <p class="error"
+            *ngIf="formulario.controls.castPrincipal.errors?.required&&formulario.controls.castPrincipal.touched">
+            El campo Cast Principal es necesario
+        </p>
+        <input type="submit" value="Enviar">
+        <!-- <input type="submit" value="Enviar" [disabled]="formulario.invalid"> -->
+    </form>
+</div>
