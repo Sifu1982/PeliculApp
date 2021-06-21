@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PeliculasService } from '../lista-peliculas/peliculas.service';
 import { Pelicula } from '../models/pelicula.model';
+import { Persona } from '../models/persona.model';
 
 @Component({
   selector: 'app-actualizacion',
@@ -66,10 +67,32 @@ export class ActualizacionComponent implements OnInit {
   }
 
   onSubmit() {
-    // console.log(this.formulario.value);
-    this.pelicula = this.formulario.value;
+    console.log(this.formulario.value);
+    let formValue = this.formulario.value;
+    let titulo = formValue.titulo;
+    let fechaDeEstreno = formValue.fechaDeEstreno;
+    let recaudacion = formValue.recaudacion;
+    let nombreDirector = formValue.nombreDirector;
+    let apellidoDirector = formValue.apellidoDirector;
+    let genero = formValue.genero;
+    let productora = formValue.productora;
+    let nombreActor1 = formValue.nombreActor1;
+    let apellidoActor1 = formValue.apellidoActor1;
+
+    this.pelicula = new Pelicula(this.peliculaId, titulo, fechaDeEstreno, recaudacion, new Persona(nombreDirector, apellidoDirector), genero, productora, [new Persona(nombreActor1, apellidoActor1)]);
+
+
     let tituloActualizado = this.pelicula.titulo;
-    this.peliculasService.updatePelicula(this.peliculaId, tituloActualizado);
+    let fechaActualizada = this.pelicula.fechaDeEstreno;
+    let recaudacionActualizada = this.pelicula.recaudacion;
+    let direccionNombreActualizado = this.pelicula.direccion.nombre;
+    let direccionApellidoActualizado = this.pelicula.direccion.primerApellido;
+    let generoActualizado = this.pelicula.genero;
+    let productoraActualizada = this.pelicula.productora;
+    let actorPrincipalNombreActualizado = this.pelicula.castPrincipal[0].nombre;
+    let actorPrincipalapellidoActualizado = this.pelicula.castPrincipal[0].primerApellido;
+
+    this.peliculasService.updatePelicula(this.peliculaId, tituloActualizado, fechaActualizada, recaudacionActualizada, direccionNombreActualizado, direccionApellidoActualizado, generoActualizado, productoraActualizada, 0, actorPrincipalNombreActualizado, actorPrincipalapellidoActualizado);
 
     this.onClick('/lista');
   }

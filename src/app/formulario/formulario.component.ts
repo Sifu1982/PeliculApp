@@ -77,7 +77,8 @@ export class FormularioComponent implements OnInit {
     let nombreActor1 = formValue.nombreActor1;
     let apellidoActor1 = formValue.apellidoActor1;
 
-    this.pelicula = new Pelicula(PELICULAS.length + 1, titulo, fechaDeEstreno, recaudacion, new Persona(nombreDirector, apellidoDirector), genero, productora, [new Persona(nombreActor1, apellidoActor1)])
+    this.pelicula = new Pelicula(PELICULAS.length + 1, titulo, fechaDeEstreno, recaudacion, new Persona(nombreDirector, apellidoDirector), genero, productora, [new Persona(nombreActor1, apellidoActor1)]);
+
     this.peliculasService.addPelicula(this.pelicula);
 
     this.onClick('/lista');

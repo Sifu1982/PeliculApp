@@ -1,6 +1,6 @@
 <button [routerLink]="['/lista']">Lista de películas</button>
 <div class="formulario">
-    <h2>Actualiza la película</h2>
+    <h2>Edita tu película</h2>
     <form novalidate [formGroup]="formulario" (ngSubmit)="onSubmit()">
         <mat-form-field>
             <mat-label>Título</mat-label>
@@ -73,7 +73,8 @@
         <p class="error"
             *ngIf="formulario.controls.apellidoActor1.errors?.required&&formulario.controls.apellidoActor1.touched">
             El campo Apellido actor/actriz 1 es necesario
-        </p> <input type="submit" value="Actualizar">
-        <!-- <input type="submit" value="Enviar" [disabled]="formulario.invalid"> -->
+        </p>
+        <!-- <input type="submit" value="Actualizar"> -->
+        <input type="submit" value="Actualizar" [disabled]="formulario.invalid">
     </form>
 </div>

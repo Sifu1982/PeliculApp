@@ -19,10 +19,6 @@ export class ListaPeliculasComponent implements OnInit {
     this.arrayPeliculas = this.peliculasService.getPeliculas();
   }
 
-  editarPelicula(pId: number, pTitulo: string) {
-    // this.peliculasService.updatePelicula(pId);
-    this.peliculasService.updateTituloPelicula(pId, pTitulo)
-  }
 
   eliminarPelicula(pId: number) {
     // Confirmación de borrado de película
